@@ -14,11 +14,14 @@
     <div class="brand"><span class="brand-dot" aria-hidden="true"></span><span class="brand-name">RYAN OS</span><span class="brand-ver mono">// CASE STUDY</span></div>
     <nav class="rail-nav" aria-label="Demo sections">
       <a class="on" href="#overview">HOME</a>
-      <a href="#tasks">TASKS</a>
-      <a href="#brain">BRAIN</a>
+      <a href="#crm">CRM</a>
+      <a href="#jobs">JOBS</a>
+      <a href="#notes">NOTES</a>
+      <a href="#training">TRAINING</a>
+      <a href="#portfolio">PORTFOLIO</a>
       <a href="#evidence">EVIDENCE</a>
     </nav>
-    <div class="railmeta mono"><span class="demo-tag"><span class="tag-long">PORTFOLIO · </span>SYNTHETIC DATA</span><span class="date">OCT 05 · ET</span><span class="avatar" aria-hidden="true">RH</span></div>
+    <div class="railmeta mono"><span class="demo-tag"><span class="tag-long">PUBLIC DEMO · </span>SYNTHETIC DATA</span><span class="date">OCT 05 · ET</span><span class="avatar" aria-hidden="true">RH</span></div>
   </header>
 
   <main class="grid">
@@ -32,6 +35,7 @@
           <div class="op-cell"><div class="k mono">NEXT EVENT</div><div class="v gold">10:00 workshop</div></div>
         </div>
         <a class="mic-strip mono" href="#brain"><span class="mic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V22h2v-3.07A8 8 0 0 0 20 11h-2z"/></svg></span><span>EXPLORE CAPTURE — TASK · NOTE · JOURNAL</span></a>
+        <a class="workspace-jump" href="#modules">Explore CRM, Jobs, Notes, Training &amp; Portfolio ↓</a>
       </section>
 
       <section class="panel" aria-labelledby="calendar-title">
@@ -107,7 +111,46 @@
     </div>
   </main>
 
-  <footer class="footer mono">ILLUSTRATIVE PORTFOLIO DEMO · ALL RECORDS INVENTED · <a href="https://github.com/ryan-halligan/ryan-os-case-study">VIEW PROJECT ON GITHUB ↗</a></footer>
+  <section class="modules" id="modules" aria-labelledby="modules-title">
+    <div class="modules-heading">
+      <div><span class="eyebrow mono">THE FULL WORKSPACE</span><h2 id="modules-title">MORE THAN A TASK LIST</h2></div>
+      <p>ryan-os brings these areas into one place. The previews below use invented records and show each module's workflow; they do not connect to the private app.</p>
+    </div>
+    <div class="module-grid">
+      <article class="panel module" id="crm" aria-labelledby="crm-title">
+        <div class="phead"><span class="idx mono">09</span><h3 id="crm-title">CRM</h3><span class="rule"></span></div>
+        <p>Keep people, follow-ups, and tasks connected so a commitment has a next action.</p>
+        <div class="module-preview"><span class="mono">EXAMPLE FOLLOW-UP</span><strong>Send a project update</strong><small>Linked to a contact · due today</small></div>
+        <details><summary>How it works</summary><p>Create a connection or task, set its priority, then find it in the board or task search.</p></details>
+      </article>
+      <article class="panel module" id="jobs" aria-labelledby="jobs-title">
+        <div class="phead"><span class="idx mono">10</span><h3 id="jobs-title">JOBS</h3><span class="rule"></span></div>
+        <p>Bring relevant openings into a board and track applications and resume versions.</p>
+        <div class="module-preview"><span class="mono">EXAMPLE APPLICATION</span><strong>Data internship</strong><small>Saved → review fit → apply</small></div>
+        <details><summary>How it works</summary><p>Review a matched posting, prepare a tailored resume, and move the application through the tracker.</p></details>
+      </article>
+      <article class="panel module" id="notes" aria-labelledby="notes-title">
+        <div class="phead"><span class="idx mono">11</span><h3 id="notes-title">NOTES</h3><span class="rule"></span></div>
+        <p>Capture ideas and source material, then return to an editable notes workspace.</p>
+        <div class="module-preview"><span class="mono">EXAMPLE NOTE</span><strong>Ideas for the workshop</strong><small>Captured → filed → editable</small></div>
+        <details><summary>How it works</summary><p>Review a capture, file it as a note, edit offline, and sync when connected.</p></details>
+      </article>
+      <article class="panel module" id="training" aria-labelledby="training-title">
+        <div class="phead"><span class="idx mono">12</span><h3 id="training-title">TRAINING</h3><span class="rule"></span></div>
+        <p>Review training signals and an AI-written daily plan alongside longer-term reports.</p>
+        <div class="module-preview"><span class="mono">EXAMPLE PLAN</span><strong>Easy session today</strong><small>Illustrative plan · no health data</small></div>
+        <details><summary>How it works</summary><p>Inspect the Coros-derived snapshot, read the daily plan, and compare it with past training reports.</p></details>
+      </article>
+      <article class="panel module" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="phead"><span class="idx mono">13</span><h3 id="portfolio-title">PORTFOLIO</h3><span class="rule"></span></div>
+        <p>View brokerage positions read-only and explore paper trading and strategy tracking.</p>
+        <div class="module-preview"><span class="mono">EXAMPLE STRATEGY</span><strong>Paper trade review</strong><small>Hypothetical only · no orders</small></div>
+        <details><summary>How it works</summary><p>Inspect positions, review hypothetical trades against market prices, and revisit strategy history. Brokerage sync is currently paused.</p></details>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer mono">ILLUSTRATIVE RYAN OS DEMO · ALL RECORDS INVENTED · <a href="https://github.com/ryan-halligan/ryan-os-case-study">VIEW PROJECT ON GITHUB ↗</a></footer>
 
   <script type="module">
     import { tasks, requests, captures } from '/demo/fixtures.mjs';

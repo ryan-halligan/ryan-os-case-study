@@ -4,9 +4,9 @@
 
 I built ryan-os because keeping track of tasks, notes, and calendars was becoming its own task. I wanted a place to capture an idea quickly, turn it into something actionable, and see it alongside the rest of my day.
 
-This repository presents a curated part of my personal operating system: voice capture, structured classification, task search, and a combined calendar agenda. It includes selected implementation excerpts and a standalone demonstration using invented data. It does not contain my personal records or the private application's configuration.
+This repository presents a curated part of my personal operating system: voice capture, structured classification, task search, and a combined calendar agenda. The demo also previews the broader workspace: CRM, Jobs, Notes, Training, and an investment Portfolio. It includes selected implementation excerpts and a standalone demonstration using invented data. It does not contain my personal records or the private application's configuration.
 
-[![Organizer demo styled after the ryan-os command center mockup, using synthetic data](assets/demo.png)](assets/demo.png)
+[![ryan-os demo with organizer, CRM, Jobs, Notes, Training, and Portfolio previews using synthetic data](assets/demo.png)](assets/demo.png)
 
 **Start here:** [Case study](CASE_STUDY.md) · [Validation and limitations](VALIDATION.md) · [Application answer](APPLICATION.md)
 
@@ -25,6 +25,20 @@ I wanted to learn whether an LLM could help with those two steps while keeping t
 - **Plan the day:** show cached calendar events and open tasks together in a seven-day agenda, using America/New_York for day boundaries.
 
 The stack behind the full application is Next.js, TypeScript, Supabase/Postgres, Claude, Whisper, and GitHub Actions. Page loads read cached data; model calls happen only through an explicit action or scheduled job.
+
+## Broader ryan-os workspace
+
+The ML case study below focuses on capture and task search, but the full application also has:
+
+| Area | Role in the system |
+|---|---|
+| CRM | People, follow-ups, tasks, priorities, and a searchable board |
+| Jobs | Matched postings, application tracking, and tailored resumes |
+| Notes | Captured ideas and an editable workspace with offline sync |
+| Training | Coros-derived signals, a daily plan, and historical reports |
+| Investment Portfolio | Read-only brokerage views, paper trading, and strategy history; brokerage sync is currently paused |
+
+The [public demo](demo/index.html) gives each area an invented example and a short workflow. Those previews describe the full app; the runnable code published here covers the organizer and selected safeguards.
 
 ```mermaid
 flowchart LR
@@ -75,8 +89,8 @@ npm run demo
 
 Open `http://127.0.0.1:4173`. The demo replays fixed synthetic outputs and uses the published ID guard. It illustrates the workflow; it is not the production app and does not perform live transcription or inference.
 
-The visual design adapts my command center mockup. The organizer content shown here is synthetic; the original mockup's personal examples are not published.
+The visual design adapts my command center mockup. All demo content is synthetic; the original mockup's personal examples are not published.
 
 ## Result and limits
 
-The result is a deployed personal organizer that brings capture, tasks, and calendar context together. The public demo lets a reviewer follow that workflow without access to private data. I am the sole user; broader usefulness and any time saved remain unmeasured. The next step is a labeled capture and task-ranking evaluation, followed by a small comparison against keyword search.
+The result is a personal operating system that brings capture, tasks, calendar context, CRM, Jobs, Notes, Training, and an investment Portfolio into one workspace. The public demo lets a reviewer explore those areas without access to private data. I am the sole user; broader usefulness and any time saved remain unmeasured. The next step is a labeled capture and task-ranking evaluation, followed by a small comparison against keyword search.

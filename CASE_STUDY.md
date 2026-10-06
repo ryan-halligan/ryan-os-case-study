@@ -4,13 +4,13 @@
 
 I was having trouble keeping myself organized. Tasks, ideas, and calendar commitments lived in different places, so figuring out what to do next required rebuilding the context. I wanted a system that made it easy to capture something immediately and useful to come back to later.
 
-That became ryan-os, my personal operating system. This case study focuses on the organizer inside it rather than every module in the application.
+That became ryan-os, my personal operating system. It grew to include a CRM for people and follow-ups, a Jobs pipeline, an editable Notes workspace, Training plans and reports, and a read-only investment Portfolio with paper trading. This case study focuses on the organizer's ML workflow; the public demo uses invented examples to show the other areas.
 
 ## The question I tested through the implementation
 
 Could unstructured language become usable organizer data without letting the model invent the underlying records?
 
-There are two model tasks: classify a capture into the right kind of item, and select relevant existing tasks for a natural-language request. Calendar parsing, task ordering, and storage rules remain deterministic. This is applied ML engineering with existing models, not a model trained from scratch.
+There are two model tasks: classify a capture into the right kind of item, and rank relevant existing tasks for a natural-language request. Calendar parsing, task-ID validation, duplicate removal, result limits, and storage rules remain deterministic. This is applied ML engineering with existing models, not a model trained from scratch.
 
 ## Capture and classification
 
