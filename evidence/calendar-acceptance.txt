@@ -1,0 +1,46 @@
+Offline calendar acceptance, October 5, 2026
+In-memory database and stubbed fetches; no production calls.
+
+PASS: All-day event: all_day=true, event_date=2026-09-10 (not shifted by process TZ)
+PASS: All-day event: location carried through
+PASS: Recurring weekly event expands to 4 instances within the window (5 in-window - 1 EXDATE'd)
+PASS: EXDATE'd occurrence (2026-09-08) is excluded from the expansion
+PASS: Recurring instance event_date is the correct ET calendar day (UTC 14:00 = 10am ET)
+PASS: Plain one-off event: not all_day, correct event_date
+PASS: Total rows: 1 all-day + 4 recurring instances + 1 one-off = 6
+PASS: A 1-day window keeps only events landing on that exact ET day
+PASS: shiftEtDate(+1) across a month boundary: 2026-08-31 -> 2026-09-01
+PASS: shiftEtDate(-1) across a month boundary: 2026-09-01 -> 2026-08-31
+PASS: shiftEtDate(+30)
+PASS: Valid JSON array of {source,url} parses correctly
+PASS: Missing env var -> empty array, not a throw
+PASS: Malformed JSON -> empty array, not a throw
+PASS: Non-array JSON -> empty array
+PASS: An entry missing url is filtered out, valid entries alongside it still parse
+PASS: syncOneFeed happy path -> ok:true
+PASS: syncOneFeed reports parsed=6 (1 all-day + 4 recurring + 1 one-off, matching the -1..+30 day window from today)
+PASS: syncOneFeed upserted count matches parsed count
+PASS: raw_ingest row was written BEFORE parsing (invariant 2) — exactly one row, status parsed
+PASS: raw_ingest payload never contains the feed URL (secret)
+PASS: calendar_events upserted rows are keyed on (source, uid, starts_at)
+PASS: Run-it-twice (invariant 6): identical event count after a second sync, no duplicates
+PASS: Seed sync succeeded before the failure test
+PASS: A failed fetch (HTTP 503) reports ok:false
+PASS: Invariant 4: existing calendar_events rows are untouched after the failed sync
+PASS: An empty feed is ok:true with parsed=0, not treated as a failure
+PASS: An empty feed leaves existing events untouched (invariant 4)
+PASS: The empty feed's own raw_ingest row is marked parsed, not rejected
+PASS: A thrown fetch error is caught and reported as ok:false
+PASS: No calendar_events rows written when the fetch itself throws
+PASS: syncAllFeeds: good feed ok, bad feed not ok, independently reported
+PASS: syncAllFeeds: the good feed's events were still upserted despite the other feed failing
+PASS: buildAgendaDays returns a 7-day window (today..+6)
+PASS: Day 0 is marked isToday and matches 'today'
+PASS: An event beyond the 7-day window (2026-09-10) is not included in any bucket
+PASS: A task is bucketed onto its due_date's day
+PASS: A timed event on today, already ended, is past
+PASS: A timed event on today, not yet started, is not past
+PASS: An all-day event on today is never dimmed mid-day, even late in the evening
+PASS: A future day's event is never past regardless of the current instant
+
+=== TOTAL: ALL CHECKS PASSED ===

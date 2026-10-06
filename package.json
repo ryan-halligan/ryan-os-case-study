@@ -1,0 +1,12 @@
+{
+  "name": "ryan-os-case-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Curated organizer case study with synthetic examples and offline guards",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/task-selection.test.mjs",
+    "demo": "node demo/server.mjs"
+  }
+}

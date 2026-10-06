@@ -1,0 +1,34 @@
+{
+  "source_commit": "5f777b5a78504fc8c1b1ff50485da135ce0b8b5b",
+  "prepared_date": "2026-10-05",
+  "files": [
+    {
+      "source": "lib/capture/classifier.ts",
+      "public": "excerpts/classifier.ts",
+      "source_sha256": "17a508da425047cbb7bbe92f99da249a2bef3b7417f0094a7b4d198416927155",
+      "public_sha256": "17a508da425047cbb7bbe92f99da249a2bef3b7417f0094a7b4d198416927155",
+      "change": "Unchanged source excerpt."
+    },
+    {
+      "source": "app/api/tasks/smart-search/route.ts",
+      "public": "excerpts/task-search.route.ts",
+      "source_sha256": "d9f5641567d8ca1cae3b83ef27fe0ce4f25ade69b462633d8c342788fbf144ab",
+      "public_sha256": "16d0f0cb810d22f591701a69ef64daa298696a6338c6ff6636312f40225e0ad4",
+      "change": "Example person in the generic prompt renamed."
+    },
+    {
+      "source": "app/api/capture/voice/route.ts",
+      "public": "excerpts/audio-capture.route.ts",
+      "source_sha256": "2820226a254dab6c4c6ff230a88eac93747f417598193dd87183dffc969aeed3",
+      "public_sha256": "2820226a254dab6c4c6ff230a88eac93747f417598193dd87183dffc969aeed3",
+      "change": "Unchanged source excerpt."
+    },
+    {
+      "source": "app/api/capture/confirm/route.ts",
+      "public": "excerpts/capture-confirm.ts",
+      "source_sha256": "18a97a9faa8b126be8bd8abde990bbea07dbc64f728d2108c498a6b0957607b3",
+      "public_sha256": "18a97a9faa8b126be8bd8abde990bbea07dbc64f728d2108c498a6b0957607b3",
+      "change": "Unchanged source excerpt."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+
+> ryan-os-case-study@1.0.0 test
+> node --test tests/task-selection.test.mjs
+
+✔ unknown IDs cannot create a displayed task (1.810541ms)
+✔ duplicate IDs are removed and model order is preserved (0.71525ms)
+✔ a stale task ID is filtered after it leaves the supplied task snapshot (0.106416ms)
+✔ an empty task list produces no displayed selection (0.117042ms)
+✔ an empty response produces no selection (0.096458ms)
+✔ results stop at 20 valid distinct IDs, rather than 20 attempted IDs (0.179083ms)
+✔ string IDs and non-finite values do not match numeric IDs (0.076333ms)
+✔ displayed rows come from the stored task snapshot (0.086458ms)
+✔ a newly added private field is absent from model prompt data (0.397ms)
+✔ description is bounded and only the linked person's name is sent (0.186625ms)
+✔ missing descriptions and people remain explicit null values (0.084ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.981125

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ryan-os · Organizer case study</title>
+<style>
+:root{color-scheme:dark;--bg:#07111c;--panel:#101d2b;--line:#273747;--text:#eef1ef;--muted:#a9b6c0;--gold:#e8bd6e;--green:#99cfb6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}main{max-width:1240px;margin:auto;padding:32px 40px 38px}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:22px}.logo{font-weight:750;font-size:26px;letter-spacing:-1px}.logo span{color:var(--gold)}.badge,.eyebrow{font:11px/1.4 ui-monospace,SFMono-Regular,monospace;letter-spacing:1.6px;text-transform:uppercase}.badge{border:1px solid #526452;padding:7px 12px;border-radius:30px;color:var(--green)}.hero{padding:35px 0 28px}.eyebrow{color:var(--gold)}h1{font-size:43px;letter-spacing:-1.8px;line-height:1.14;margin:10px 0 14px;font-weight:650}.hero p{max-width:700px;color:var(--muted);margin:0;font-size:16px}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:23px}.panel h2{font-size:19px;letter-spacing:-.3px;margin:5px 0 16px}.label{color:var(--muted);font:11px ui-monospace,monospace;letter-spacing:1.1px;text-transform:uppercase}.label b{color:var(--gold);margin-right:8px;font-weight:500}.quote{background:#091522;border-left:3px solid var(--gold);padding:14px 16px;margin:0 0 13px;border-radius:0 6px 6px 0}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px}.tabs button,.queries button{background:#0b1724;border:1px solid var(--line);color:var(--muted);padding:7px 12px;border-radius:6px;font-size:12px}.tabs button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-bottom:16px}.flow span{border:1px solid var(--line);padding:4px 7px;border-radius:4px}.flow i{font-style:normal;color:var(--gold)}.json{margin:0;padding:13px 15px;background:#08131f;border-radius:6px;color:#b5d2c3;font:12px/1.65 ui-monospace,SFMono-Regular,monospace;white-space:pre-wrap;min-height:132px}.fine{font-size:11px;color:var(--muted);margin:11px 0 0}.agenda{border-top:1px solid var(--line);margin-top:16px;padding-top:15px}.event{display:flex;gap:16px;border-top:1px solid #253443;padding:11px 0}.event:first-child{border:0}.event time{font-size:12px;color:var(--gold);width:56px;flex:none;padding-top:2px}.event strong{font-size:13px;font-weight:550}.event small{display:block;color:var(--muted);font-size:11px}.queries{display:flex;flex-wrap:wrap;gap:7px}.queries button[aria-pressed="true"]{color:#07111c;background:var(--gold);border-color:var(--gold)}#reason{min-height:34px;font-size:12px;color:var(--muted);margin:14px 0 10px}.task{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid #263645}.task .dot{width:10px;height:10px;border:1px solid #788d9c;border-radius:50%;flex:none}.task .name{flex:1;font-size:13px}.task .meta{display:block;font-size:11px;color:var(--muted)}.task .effort{font:12px ui-monospace,monospace;color:var(--gold)}.guard{border:1px solid #3b554e;color:var(--green);background:#102a26;border-radius:6px;padding:10px 12px;font:11px/1.5 ui-monospace,monospace;margin-top:16px}.footer{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted);padding-top:22px}.footer a{color:var(--gold)}
+@media(max-width:780px){main{padding:22px 18px}.grid{grid-template-columns:1fr}h1{font-size:34px}.badge{font-size:9px;letter-spacing:.7px}.panel{padding:20px}.footer{display:block}.hero{padding-top:27px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="logo">ryan<span>-os</span></div><span class="badge">Portfolio demo · synthetic data</span></header>
+<section class="hero"><div class="eyebrow">A personal operating system</div><h1>Capture it. Find it. Plan your day.</h1><p>I built ryan-os to bring scattered commitments into one organizer. This demonstration illustrates how language becomes a saved item and how a request becomes a grounded task selection.</p></section>
+<div class="grid">
+<section class="panel" aria-labelledby="capture-title">
+<div class="label"><b>01</b> From thought to structure</div><h2 id="capture-title">Capture without losing the context</h2>
+<div class="tabs" id="capture-tabs" aria-label="Synthetic capture examples"></div>
+<blockquote class="quote" id="transcript"></blockquote>
+<div class="flow"><span>Preserve input</span><i>→</i><span>Transcribe + review</span><i>→</i><span>Classify</span><i>→</i><span>Save</span></div>
+<pre class="json" id="structured" aria-live="polite"></pre>
+<p class="fine">Fixed example output. No recording, transcription, model call, or save occurs in this demo.</p>
+<div class="agenda"><div class="label"><b>03</b> One view of the day · Oct 5, 2026</div><div class="event"><time>10:00</time><div><strong>Class project workshop</strong><small>Synthetic calendar event · America/New_York</small></div></div><div class="event"><time>14:00</time><div><strong>Study group</strong><small>Synthetic calendar event · America/New_York</small></div></div><div class="event"><time>Today</time><div><strong>Draft outline + send check-in</strong><small>Tasks due today, alongside the calendar</small></div></div></div>
+</section>
+<section class="panel" aria-labelledby="search-title">
+<div class="label"><b>02</b> Find the next useful action</div><h2 id="search-title">Ask your task list a question</h2>
+<div class="queries" id="queries" aria-label="Example task requests"></div>
+<p id="reason" aria-live="polite"></p><div id="results" aria-live="polite"></div><div id="guard" class="guard" aria-live="polite"></div>
+<p class="fine">The examples replay fixed model responses. The ID membership check, duplicate removal, and result cap run in your browser using the published guard module.</p>
+</section>
+</div>
+<footer class="footer"><span>Illustrative UI created for the case study · all records invented · no API keys required</span><a href="https://github.com/ryan-halligan/ryan-os-case-study">Read the case study ↗</a></footer>
+</main>
+<script type="module">
+import { tasks, requests, captures } from '/demo/fixtures.mjs';
+import { selectExistingTasks } from '/src/task-selection.mjs';
+const captureButtons=[];
+captures.forEach((capture,i)=>{
+  const button=document.createElement('button');
+  button.textContent=capture.type;
+  button.type='button';button.setAttribute('aria-pressed',String(i===0));
+  button.addEventListener('click',()=>showCapture(i));
+  captureButtons.push(button);document.querySelector('#capture-tabs').append(button);
+});
+function showCapture(i){
+  const c=captures[i];captureButtons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
+  document.querySelector('#transcript').textContent='“'+c.transcript+'”';
+  document.querySelector('#structured').textContent=JSON.stringify({type:c.type,title:c.title,due_date:c.due_date},null,2);
+}
+const queryButtons=[];
+requests.forEach((request,i)=>{
+  const button=document.createElement('button');button.textContent=request.label;
+  button.type='button';button.setAttribute('aria-pressed',String(i===0));
+  button.addEventListener('click',()=>showRequest(i));
+  queryButtons.push(button);document.querySelector('#queries').append(button);
+});
+function showRequest(i){
+  const request=requests[i];queryButtons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
+  const selected=selectExistingTasks(tasks,request.ids);
+  document.querySelector('#reason').textContent=request.explanation;
+  const results=document.querySelector('#results');results.replaceChildren();
+  for(const task of selected.tasks){
+    const row=document.createElement('div');row.className='task';
+    const dot=document.createElement('span');dot.className='dot';dot.setAttribute('aria-hidden','true');
+    const name=document.createElement('div');name.className='name';name.textContent=task.title;
+    const meta=document.createElement('span');meta.className='meta';meta.textContent=task.urgency.replaceAll('_',' ')+' · '+task.category;name.append(meta);
+    const effort=document.createElement('span');effort.className='effort';effort.textContent=task.time_est_min+' min';
+    row.append(dot,name,effort);results.append(row);
+  }
+  document.querySelector('#guard').textContent='Output IDs '+JSON.stringify(request.ids)+' → verified IDs '+JSON.stringify(selected.task_ids)+'\nOnly stored tasks appear. Duplicates are removed. At most 20 results.';
+}
+showCapture(0);showRequest(0);
+</script>
+</body>
+</html>
