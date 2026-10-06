@@ -6,7 +6,7 @@ I built ryan-os because keeping track of tasks, notes, and calendars was becomin
 
 This repository presents a curated part of my personal operating system: voice capture, structured classification, task search, and a combined calendar agenda. It includes selected implementation excerpts and a standalone demonstration using invented data. It does not contain my personal records or the private application's configuration.
 
-![Illustrative organizer demo using synthetic data](assets/demo.png)
+[![Organizer demo styled after the ryan-os command center mockup, using synthetic data](assets/demo.png)](assets/demo.png)
 
 **Start here:** [Case study](CASE_STUDY.md) · [Validation and limitations](VALIDATION.md) · [Application answer](APPLICATION.md)
 
@@ -74,6 +74,8 @@ npm run demo
 ```
 
 Open `http://127.0.0.1:4173`. The demo replays fixed synthetic outputs and uses the published ID guard. It illustrates the workflow; it is not the production app and does not perform live transcription or inference.
+
+The visual design adapts my command center mockup. The organizer content shown here is synthetic; the original mockup's personal examples are not published.
 
 ## Result and limits
 

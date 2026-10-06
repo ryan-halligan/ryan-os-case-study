@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const files = new Map([
   ["/", ["demo/index.html", "text/html; charset=utf-8"]],
+  ["/demo/styles.css", ["demo/styles.css", "text/css; charset=utf-8"]],
   ["/demo/fixtures.mjs", ["demo/fixtures.mjs", "text/javascript; charset=utf-8"]],
   ["/src/task-selection.mjs", ["src/task-selection.mjs", "text/javascript; charset=utf-8"]],
 ]);

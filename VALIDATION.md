@@ -8,6 +8,7 @@ Prepared October 5, 2026. No production service was called for this publication.
 | Public task-selection tests | Extracted prompt whitelist and returned-ID filtering | Run `npm test`; [saved output](evidence/task-selection-tests.txt) |
 | Historical capture acceptance | Concurrent confirms, repeated confirms, an ET midnight boundary, and a connection-without-name fallback | Recorded as passing in the private project's August 31 build log; not rerun here |
 | Synthetic organizer demo | Local rendering and interaction with fixed examples | Checked in a local browser; no model or database calls |
+| Mockup-style presentation | Three-column desktop layout, responsive layout, capture and task controls, secondary text contrast | Browser checked at 320, 390, 768, 1024, and 1440 pixels; no horizontal overflow; secondary text exceeded 4.5:1 contrast on the panel and page backgrounds |
 
 The calendar suite checks raw-first ingestion, all-day and recurring events, exclusions, ET grouping, repeated-ingest idempotency, independent feed failures, and preservation of the prior snapshot after failed reads. The saved output is from the current source, which has 41 checks; an older build-log entry reported 39.
 

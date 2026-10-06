@@ -1,77 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ryan-os · Organizer case study</title>
-<style>
-:root{color-scheme:dark;--bg:#07111c;--panel:#101d2b;--line:#273747;--text:#eef1ef;--muted:#a9b6c0;--gold:#e8bd6e;--green:#99cfb6}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}main{max-width:1240px;margin:auto;padding:32px 40px 38px}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:22px}.logo{font-weight:750;font-size:26px;letter-spacing:-1px}.logo span{color:var(--gold)}.badge,.eyebrow{font:11px/1.4 ui-monospace,SFMono-Regular,monospace;letter-spacing:1.6px;text-transform:uppercase}.badge{border:1px solid #526452;padding:7px 12px;border-radius:30px;color:var(--green)}.hero{padding:35px 0 28px}.eyebrow{color:var(--gold)}h1{font-size:43px;letter-spacing:-1.8px;line-height:1.14;margin:10px 0 14px;font-weight:650}.hero p{max-width:700px;color:var(--muted);margin:0;font-size:16px}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:23px}.panel h2{font-size:19px;letter-spacing:-.3px;margin:5px 0 16px}.label{color:var(--muted);font:11px ui-monospace,monospace;letter-spacing:1.1px;text-transform:uppercase}.label b{color:var(--gold);margin-right:8px;font-weight:500}.quote{background:#091522;border-left:3px solid var(--gold);padding:14px 16px;margin:0 0 13px;border-radius:0 6px 6px 0}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px}.tabs button,.queries button{background:#0b1724;border:1px solid var(--line);color:var(--muted);padding:7px 12px;border-radius:6px;font-size:12px}.tabs button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-bottom:16px}.flow span{border:1px solid var(--line);padding:4px 7px;border-radius:4px}.flow i{font-style:normal;color:var(--gold)}.json{margin:0;padding:13px 15px;background:#08131f;border-radius:6px;color:#b5d2c3;font:12px/1.65 ui-monospace,SFMono-Regular,monospace;white-space:pre-wrap;min-height:132px}.fine{font-size:11px;color:var(--muted);margin:11px 0 0}.agenda{border-top:1px solid var(--line);margin-top:16px;padding-top:15px}.event{display:flex;gap:16px;border-top:1px solid #253443;padding:11px 0}.event:first-child{border:0}.event time{font-size:12px;color:var(--gold);width:56px;flex:none;padding-top:2px}.event strong{font-size:13px;font-weight:550}.event small{display:block;color:var(--muted);font-size:11px}.queries{display:flex;flex-wrap:wrap;gap:7px}.queries button[aria-pressed="true"]{color:#07111c;background:var(--gold);border-color:var(--gold)}#reason{min-height:34px;font-size:12px;color:var(--muted);margin:14px 0 10px}.task{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid #263645}.task .dot{width:10px;height:10px;border:1px solid #788d9c;border-radius:50%;flex:none}.task .name{flex:1;font-size:13px}.task .meta{display:block;font-size:11px;color:var(--muted)}.task .effort{font:12px ui-monospace,monospace;color:var(--gold)}.guard{border:1px solid #3b554e;color:var(--green);background:#102a26;border-radius:6px;padding:10px 12px;font:11px/1.5 ui-monospace,monospace;margin-top:16px}.footer{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted);padding-top:22px}.footer a{color:var(--gold)}
-@media(max-width:780px){main{padding:22px 18px}.grid{grid-template-columns:1fr}h1{font-size:34px}.badge{font-size:9px;letter-spacing:.7px}.panel{padding:20px}.footer{display:block}.hero{padding-top:27px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RYAN OS — Organizer Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/demo/styles.css">
 </head>
 <body>
-<main>
-<header><div class="logo">ryan<span>-os</span></div><span class="badge">Portfolio demo · synthetic data</span></header>
-<section class="hero"><div class="eyebrow">A personal operating system</div><h1>Capture it. Find it. Plan your day.</h1><p>I built ryan-os to bring scattered commitments into one organizer. This demonstration illustrates how language becomes a saved item and how a request becomes a grounded task selection.</p></section>
-<div class="grid">
-<section class="panel" aria-labelledby="capture-title">
-<div class="label"><b>01</b> From thought to structure</div><h2 id="capture-title">Capture without losing the context</h2>
-<div class="tabs" id="capture-tabs" aria-label="Synthetic capture examples"></div>
-<blockquote class="quote" id="transcript"></blockquote>
-<div class="flow"><span>Preserve input</span><i>→</i><span>Transcribe + review</span><i>→</i><span>Classify</span><i>→</i><span>Save</span></div>
-<pre class="json" id="structured" aria-live="polite"></pre>
-<p class="fine">Fixed example output. No recording, transcription, model call, or save occurs in this demo.</p>
-<div class="agenda"><div class="label"><b>03</b> One view of the day · Oct 5, 2026</div><div class="event"><time>10:00</time><div><strong>Class project workshop</strong><small>Synthetic calendar event · America/New_York</small></div></div><div class="event"><time>14:00</time><div><strong>Study group</strong><small>Synthetic calendar event · America/New_York</small></div></div><div class="event"><time>Today</time><div><strong>Draft outline + send check-in</strong><small>Tasks due today, alongside the calendar</small></div></div></div>
-</section>
-<section class="panel" aria-labelledby="search-title">
-<div class="label"><b>02</b> Find the next useful action</div><h2 id="search-title">Ask your task list a question</h2>
-<div class="queries" id="queries" aria-label="Example task requests"></div>
-<p id="reason" aria-live="polite"></p><div id="results" aria-live="polite"></div><div id="guard" class="guard" aria-live="polite"></div>
-<p class="fine">The examples replay fixed model responses. The ID membership check, duplicate removal, and result cap run in your browser using the published guard module.</p>
-</section>
-</div>
-<footer class="footer"><span>Illustrative UI created for the case study · all records invented · no API keys required</span><a href="https://github.com/ryan-halligan/ryan-os-case-study">Read the case study ↗</a></footer>
-</main>
-<script type="module">
-import { tasks, requests, captures } from '/demo/fixtures.mjs';
-import { selectExistingTasks } from '/src/task-selection.mjs';
-const captureButtons=[];
-captures.forEach((capture,i)=>{
-  const button=document.createElement('button');
-  button.textContent=capture.type;
-  button.type='button';button.setAttribute('aria-pressed',String(i===0));
-  button.addEventListener('click',()=>showCapture(i));
-  captureButtons.push(button);document.querySelector('#capture-tabs').append(button);
-});
-function showCapture(i){
-  const c=captures[i];captureButtons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
-  document.querySelector('#transcript').textContent='“'+c.transcript+'”';
-  document.querySelector('#structured').textContent=JSON.stringify({type:c.type,title:c.title,due_date:c.due_date},null,2);
-}
-const queryButtons=[];
-requests.forEach((request,i)=>{
-  const button=document.createElement('button');button.textContent=request.label;
-  button.type='button';button.setAttribute('aria-pressed',String(i===0));
-  button.addEventListener('click',()=>showRequest(i));
-  queryButtons.push(button);document.querySelector('#queries').append(button);
-});
-function showRequest(i){
-  const request=requests[i];queryButtons.forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));
-  const selected=selectExistingTasks(tasks,request.ids);
-  document.querySelector('#reason').textContent=request.explanation;
-  const results=document.querySelector('#results');results.replaceChildren();
-  for(const task of selected.tasks){
-    const row=document.createElement('div');row.className='task';
-    const dot=document.createElement('span');dot.className='dot';dot.setAttribute('aria-hidden','true');
-    const name=document.createElement('div');name.className='name';name.textContent=task.title;
-    const meta=document.createElement('span');meta.className='meta';meta.textContent=task.urgency.replaceAll('_',' ')+' · '+task.category;name.append(meta);
-    const effort=document.createElement('span');effort.className='effort';effort.textContent=task.time_est_min+' min';
-    row.append(dot,name,effort);results.append(row);
-  }
-  document.querySelector('#guard').textContent='Output IDs '+JSON.stringify(request.ids)+' → verified IDs '+JSON.stringify(selected.task_ids)+'\nOnly stored tasks appear. Duplicates are removed. At most 20 results.';
-}
-showCapture(0);showRequest(0);
-</script>
+  <header class="rail">
+    <div class="brand"><span class="brand-dot" aria-hidden="true"></span><span class="brand-name">RYAN OS</span><span class="brand-ver mono">// CASE STUDY</span></div>
+    <nav class="rail-nav" aria-label="Demo sections">
+      <a class="on" href="#overview">HOME</a>
+      <a href="#tasks">TASKS</a>
+      <a href="#brain">BRAIN</a>
+      <a href="#evidence">EVIDENCE</a>
+    </nav>
+    <div class="railmeta mono"><span class="demo-tag"><span class="tag-long">PORTFOLIO · </span>SYNTHETIC DATA</span><span class="date">OCT 05 · ET</span><span class="avatar" aria-hidden="true">RH</span></div>
+  </header>
+
+  <main class="grid">
+    <div class="col left">
+      <section class="panel" id="overview" aria-labelledby="operator-title">
+        <div class="phead"><span class="idx mono">01</span><h2 id="operator-title">OPERATOR</h2><span class="rule"></span><span class="tag ok mono">● DEMO</span></div>
+        <h1 class="op-name">Your day, in one place</h1>
+        <div class="op-sub">Capture · organize · find the next action</div>
+        <div class="op-row">
+          <div class="op-cell"><div class="k mono">DUE TODAY</div><div class="v">2 tasks</div></div>
+          <div class="op-cell"><div class="k mono">NEXT EVENT</div><div class="v gold">10:00 workshop</div></div>
+        </div>
+        <a class="mic-strip mono" href="#brain"><span class="mic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V22h2v-3.07A8 8 0 0 0 20 11h-2z"/></svg></span><span>EXPLORE CAPTURE — TASK · NOTE · JOURNAL</span></a>
+      </section>
+
+      <section class="panel" aria-labelledby="calendar-title">
+        <div class="phead"><span class="idx mono">02</span><h2 id="calendar-title">CALENDAR</h2><span class="rule"></span><span class="tag mono">OCT 2026</span></div>
+        <div class="week" aria-label="Illustrative week of October 5">
+          <div class="day on"><div class="dw mono">MON</div><div class="dn">05</div></div>
+          <div class="day"><div class="dw mono">TUE</div><div class="dn">06</div></div>
+          <div class="day"><div class="dw mono">WED</div><div class="dn">07</div></div>
+          <div class="day"><div class="dw mono">THU</div><div class="dn">08</div></div>
+          <div class="day"><div class="dw mono">FRI</div><div class="dn">09</div></div>
+          <div class="day"><div class="dw mono">SAT</div><div class="dn">10</div></div>
+          <div class="day"><div class="dw mono">SUN</div><div class="dn">11</div></div>
+        </div>
+        <div class="evt"><time class="mono">10:00</time><span class="n">Class project workshop<small>Example calendar event</small></span><span class="cat mono">EVENT</span></div>
+        <div class="evt"><time class="mono">TODAY</time><span class="n">Draft presentation outline<small>25 min · from task list</small></span><span class="cat taskcat mono">TASK</span></div>
+        <div class="evt"><time class="mono">14:00</time><span class="n">Study group<small>Example calendar event</small></span><span class="cat mono">EVENT</span></div>
+        <div class="evt"><time class="mono">TODAY</time><span class="n">Send project check-in<small>10 min · from task list</small></span><span class="cat taskcat mono">TASK</span></div>
+        <div class="sync mono"><span class="led" aria-hidden="true"></span> FIXED DEMO · NO CALENDAR CONNECTED</div>
+      </section>
+
+      <section class="panel" aria-labelledby="boundary-title">
+        <div class="phead"><span class="idx mono">03</span><h2 id="boundary-title">DATA BOUNDARY</h2><span class="rule"></span><span class="tag mono">PRIVATE BY DESIGN</span></div>
+        <div class="privacy-point"><span class="mono">01</span><div><b>Explicit prompt fields</b><small>New database columns do not silently reach task search.</small></div></div>
+        <div class="privacy-point"><span class="mono">02</span><div><b>Verified task IDs</b><small>Unknown or duplicate model selections never display.</small></div></div>
+        <div class="privacy-point"><span class="mono">03</span><div><b>Synthetic public examples</b><small>No personal notes, calendar, health, or financial records.</small></div></div>
+      </section>
+    </div>
+
+    <div class="col center">
+      <section class="panel" id="tasks" aria-labelledby="tasks-title">
+        <div class="phead"><span class="idx mono">04</span><h2 id="tasks-title">TODAY'S FOCUS — GROUNDED TASK SEARCH</h2><span class="rule"></span><span class="tag ok mono">6 EXISTING TASKS</span></div>
+        <div class="intro"><span class="mono" style="display:block;color:var(--gold);font-size:.59rem;letter-spacing:.14em;margin-bottom:5px">WHY THIS APPROACH</span><strong>Language understands the request; code verifies the answer.</strong> Ask about urgency, effort, or topic. The example model output can select only tasks already in the list.</div>
+        <div id="queries" class="query-buttons" aria-label="Example task requests"></div>
+        <p id="reason" aria-live="polite"></p>
+        <div id="results" aria-live="polite"></div>
+        <div id="guard" class="guard mono" aria-live="polite"></div>
+        <p class="hint">Selections are fixed synthetic outputs. The published membership and duplicate checks run here in your browser.</p>
+      </section>
+
+      <section class="panel" id="evidence" aria-labelledby="evidence-title">
+        <div class="phead"><span class="idx mono">05</span><h2 id="evidence-title">EVIDENCE & LIMITS</h2><span class="rule"></span><span class="tag mono">REPRODUCIBLE</span></div>
+        <div class="metric-grid">
+          <div class="metric"><strong>41/41</strong><span class="k mono">CALENDAR CHECKS PASS</span></div>
+          <div class="metric"><strong>11/11</strong><span class="k mono">GUARD TESTS PASS</span></div>
+          <div class="metric limit"><strong>UNMEASURED</strong><span class="k mono">MODEL QUALITY · TIME SAVED</span></div>
+        </div>
+        <div class="link-row"><a href="https://github.com/ryan-halligan/ryan-os-case-study/blob/main/CASE_STUDY.md">READ CASE STUDY ↗</a><a href="https://github.com/ryan-halligan/ryan-os-case-study/blob/main/VALIDATION.md">VIEW VALIDATION ↗</a></div>
+      </section>
+    </div>
+
+    <div class="col right">
+      <section class="panel" id="brain" aria-labelledby="brain-title">
+        <div class="phead"><span class="idx mono">06</span><h2 id="brain-title">SECOND BRAIN</h2><span class="rule"></span><span class="tag mono">CAPTURE · CLASSIFY</span></div>
+        <div class="brain-lead"><span class="mic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V22h2v-3.07A8 8 0 0 0 20 11h-2z"/></svg></span><p><b>Capture a thought.</b> Review the transcript, then file it as a task, note, or journal entry.</p></div>
+        <div id="capture-tabs" class="capture-tabs" aria-label="Synthetic capture examples"></div>
+        <blockquote id="transcript" class="quote"></blockquote>
+        <pre id="structured" class="json" aria-live="polite"></pre>
+        <p class="hint">Fixed examples. No recording, model call, or save happens here.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="pipeline-title">
+        <div class="phead"><span class="idx mono">07</span><h2 id="pipeline-title">CAPTURE PIPELINE</h2><span class="rule"></span><span class="tag mono">RAW FIRST</span></div>
+        <div class="flow-row"><span class="step mono">01</span><div>Preserve original input<small>Recoverable after transcription failure</small></div></div>
+        <div class="flow-row"><span class="step mono">02</span><div>Transcribe and review<small>The user confirms before routing</small></div></div>
+        <div class="flow-row"><span class="step mono">03</span><div>Classify with a schema<small>Low-confidence results fall back to notes</small></div></div>
+        <div class="flow-row"><span class="step mono">04</span><div>Save once<small>Capture ID prevents duplicate items on retry</small></div></div>
+      </section>
+
+      <section class="panel" aria-labelledby="demo-title">
+        <div class="phead"><span class="idx mono">08</span><h2 id="demo-title">ABOUT THIS DEMO</h2><span class="rule"></span><span class="tag mono">PUBLIC</span></div>
+        <p class="privacy-copy">This is an illustrative interface using invented records and fixed example outputs. The production app and its personal data are private. The linked case study shows selected implementation code and the checks behind it.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer mono">ILLUSTRATIVE PORTFOLIO DEMO · ALL RECORDS INVENTED · <a href="https://github.com/ryan-halligan/ryan-os-case-study">VIEW PROJECT ON GITHUB ↗</a></footer>
+
+  <script type="module">
+    import { tasks, requests, captures } from '/demo/fixtures.mjs';
+    import { selectExistingTasks } from '/src/task-selection.mjs';
+
+    const navLinks = [...document.querySelectorAll('.rail-nav a')];
+    function updateActiveLink() {
+      const section = location.hash || '#overview';
+      navLinks.forEach((link) => link.classList.toggle('on', link.getAttribute('href') === section));
+    }
+    window.addEventListener('hashchange', updateActiveLink);
+    updateActiveLink();
+
+    const captureButtons = [];
+    captures.forEach((capture, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = capture.type.toUpperCase();
+      button.setAttribute('aria-pressed', String(i === 0));
+      button.addEventListener('click', () => showCapture(i));
+      captureButtons.push(button);
+      document.querySelector('#capture-tabs').append(button);
+    });
+
+    function showCapture(i) {
+      const capture = captures[i];
+      captureButtons.forEach((button, j) => button.setAttribute('aria-pressed', String(j === i)));
+      document.querySelector('#transcript').textContent = '“' + capture.transcript + '”';
+      document.querySelector('#structured').textContent = JSON.stringify({ type: capture.type, title: capture.title, due_date: capture.due_date }, null, 2);
+    }
+
+    const queryButtons = [];
+    requests.forEach((request, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = request.label;
+      button.setAttribute('aria-pressed', String(i === 0));
+      button.addEventListener('click', () => showRequest(i));
+      queryButtons.push(button);
+      document.querySelector('#queries').append(button);
+    });
+
+    function showRequest(i) {
+      const request = requests[i];
+      queryButtons.forEach((button, j) => button.setAttribute('aria-pressed', String(j === i)));
+      const selected = selectExistingTasks(tasks, request.ids);
+      document.querySelector('#reason').textContent = request.explanation;
+      const results = document.querySelector('#results');
+      results.replaceChildren();
+      selected.tasks.forEach((task, index) => {
+        const row = document.createElement('div');
+        row.className = 'task';
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.textContent = index === 0 ? '◆' : '';
+        dot.setAttribute('aria-hidden', 'true');
+        const name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = task.title;
+        const meta = document.createElement('span');
+        meta.className = 'meta mono';
+        meta.textContent = task.urgency.replaceAll('_', ' ') + ' · ' + task.category;
+        name.append(meta);
+        const effort = document.createElement('span');
+        effort.className = 'effort mono';
+        effort.textContent = task.time_est_min + ' min';
+        row.append(dot, name, effort);
+        results.append(row);
+      });
+      document.querySelector('#guard').textContent = 'MODEL IDs ' + JSON.stringify(request.ids) + ' → VERIFIED IDs ' + JSON.stringify(selected.task_ids) + '\nOnly stored tasks appear. Duplicates removed. Maximum 20 results.';
+    }
+
+    showCapture(0);
+    showRequest(0);
+  </script>
 </body>
 </html>

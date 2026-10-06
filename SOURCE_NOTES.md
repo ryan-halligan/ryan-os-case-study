@@ -14,7 +14,7 @@ The source snapshot is commit `5f777b5a78504fc8c1b1ff50485da135ce0b8b5b`. Unfini
 
 The route excerpts rely on application modules and middleware that are deliberately not included. In the private app, middleware authenticates these routes. These files are for inspection and are not a standalone backend or deployment template.
 
-The public demo, fixture data, Node server, and standalone tests were created for this publication. The demo uses fixed synthetic model outputs. It does not reproduce the original app's interface pixel for pixel and does not perform inference. Source and excerpt hashes are available in [the manifest](evidence/source-manifest.json).
+The public demo, fixture data, Node server, and standalone tests were created for this publication. Its visual language adapts the original ryan-os command center mockup: navy grid background, gold rail, condensed headings, and three-column panels. The original mockup's personal examples were not copied. The demo uses fixed synthetic model outputs; it does not reproduce the production app pixel for pixel or perform inference. Source and excerpt hashes are available in [the manifest](evidence/source-manifest.json).
 
 ## Publishing scope
 
